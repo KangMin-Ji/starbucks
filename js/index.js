@@ -17,7 +17,6 @@ $(function () {
     onUpdate: (self) => {
       self.direction === -1 ? showAnim.play() : showAnim.reverse()
     },
-    //markers: true,
   });
 
   $('.notification .close_btn').click(function(e){
@@ -115,8 +114,6 @@ const menusSwiper = new Swiper(".menusSwiper", {
       scrollTrigger:{
         trigger: item,
         start:"top 50%", // element-start browser-start
-        //end:"bottom top",
-        //markers: true
       },  
       opacity: 0,
       yPercent: 50,
@@ -131,8 +128,6 @@ const menusSwiper = new Swiper(".menusSwiper", {
       scrollTrigger:{
         trigger: item,
         start:"top 50%", // element-start browser-start
-        //end:"bottom top",
-        //markers: true
       },  
       opacity: 0,
       yPercent: 50,
@@ -150,7 +145,6 @@ const menusSwiper = new Swiper(".menusSwiper", {
           start:"top 100%", // element-start browser-start
           end:"50% 50%",
           scrub: 1,
-          //markers: true,
         },  
         opacity: 0,
         rotation:30,
@@ -167,7 +161,6 @@ const menusSwiper = new Swiper(".menusSwiper", {
           start:"top 100%", // element-start browser-start
           end:"50% 50%",
           scrub: 1,
-          //markers: true,
         },  
         opacity: 0,
         rotation:-30,
@@ -185,7 +178,6 @@ const menusSwiper = new Swiper(".menusSwiper", {
       start:"-10% bottom",
       end:"bottom bottom",
       scrub: 1,
-      markers: true,
     },
     xPercent: 60,
   });
@@ -207,8 +199,8 @@ const menusSwiper = new Swiper(".menusSwiper", {
         end: "+=1500",
         scrub: 1,
         pin: ".footer_bg_wrap",
-        // pinSpacing: false,
-        //markers: true,
+        pinSpacing: false,
+        anticipatePin: true,
       }, 
       yPercent:100,
       rotation:12,
@@ -223,7 +215,6 @@ const menusSwiper = new Swiper(".menusSwiper", {
         end: "+=1500",
         scrub: 1,
         pin: ".footer_bg_wrap",
-        //markers: true,
       }, 
       scale: 1.3,
     });
@@ -235,7 +226,6 @@ const menusSwiper = new Swiper(".menusSwiper", {
         end: "+=1500",
         scrub: 1,
         pin: ".footer_bg_wrap",
-        //markers: true,
       },  
       //scale: 1.3,
       yPercent:50,
@@ -252,8 +242,6 @@ const menusSwiper = new Swiper(".menusSwiper", {
       scrollTrigger:{
         trigger: item,
         start:"-15% 10%", // element-start browser-start
-        //end:"bottom top",
-        //markers: true
       },  
       opacity: 0,
       yPercent: 50,
@@ -274,8 +262,7 @@ const monthSwiper = new Swiper(".monthSwiper", {
       prevEl: ".month-btn-prev",
     },
   });
-//'.swiper-slide .img_wrap .image'
-//'.swiper-slide.is_odd .img_wrap .image'
+
   function imgRotatePrev(image, image_odd){
     $('.imgRotate').each(function(index, item) {
       el = $(this).find(image);
@@ -291,9 +278,6 @@ const monthSwiper = new Swiper(".monthSwiper", {
     });
   }
 imgRotatePrev('.swiper-slide .img_wrap .image', '.swiper-slide.is_odd .img_wrap .image');
-
-//'.swiper-slide .img_wrap .image'
-//'.swiper-slide.is_odd .img_wrap .image'
   function imgRotateNext(image, image_odd){
     $('.imgRotate').each(function(index, item) {
       el = $(this).find(image);
@@ -308,20 +292,6 @@ imgRotatePrev('.swiper-slide .img_wrap .image', '.swiper-slide.is_odd .img_wrap 
       })
     });
   }
-  // function imgRotateNext02(image, image_odd){
-  //   $('.imgRotate').each(function(index, item) {
-  //     el = $(this).find(image);
-  //     el_2 = $(this).find(image_odd);
-  //     gsap.to(el, {
-  //       rotate: -2,
-  //       duration: 0.1,
-  //     });
-  //     gsap.to(el_2, {
-  //       rotate: 2,
-  //       duration: 0.1,
-  //     })
-  //   });
-  // }
 
 monthSwiper.on('slideNextTransitionStart', function() {
   if($('.swiper-slide .img_wrap').hasClass('on')) {
@@ -372,14 +342,6 @@ const productsSwiper = new Swiper(".productsSwiper", {
   const readySwiper = new Swiper(".readySwiper", {
     slidesPerView: 'auto',
     spaceBetween: 100,
-    // scrollbar: {
-    //   el: ".ranch-scrollbar",
-    //   hide: true,
-    // },
-    // navigation: {
-    //   nextEl: ".ranch-btn-next",
-    //   prevEl: ".ranch-btn-prev",
-    // },
   });
   
 
@@ -400,7 +362,6 @@ function swiperMotion() {
   const swiperIndex = $('weeksSwiper .weeks-slide').index();
   for(i = 0; i <= swiperLength; i++) {
     if(i%2 === swiperIndex){
-      // $('.weeks-slide a .img_wrap .image.on').removeClass('on');
       $('.weeks-slide a .img_wrap .image.on').addClass('on');
     }
     else{
