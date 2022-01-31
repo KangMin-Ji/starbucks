@@ -357,23 +357,24 @@ $('.recipes_hover').hover(function() {
 
 
 
-function swiperMotion() {
-  const swiperLength = $('weeksSwiper .swipper-wrapper').length;
-  const swiperIndex = $('weeksSwiper .weeks-slide').index();
-  for(i = 0; i <= swiperLength; i++) {
-    if(i%2 === swiperIndex){
-      $('.weeks-slide a .img_wrap .image.on').addClass('on');
-    }
-    else{
-      $('.weeks-slide a .img_wrap .image.on').removeClass('on');
-    }
-  }
-}
+// function swiperMotion() {
+//   const swiperLength = $('weeksSwiper .swipper-wrapper').length;
+//   const swiperIndex = $('weeksSwiper .weeks-slide').index();
+//   for(i = 0; i <= swiperLength; i++) {
+//     if(i%2 === swiperIndex){
+//       console.log('adfs');
+//       $('.weeks-slide a .img_wrap .image.on').addClass('on');
+//     }
+//     else{
+//       $('.weeks-slide a .img_wrap .image.on').removeClass('on');
+//     }
+//   }
+// }
 
 
-$('.weeksSwiper .swiper_controls .weeks-btn-next').click(function() {
-  swiperMotion();
-});
+// $('.weeksSwiper .swiper_controls .weeks-btn-next').click(function() {
+//   swiperMotion();
+// });
 
 
 }); //end
